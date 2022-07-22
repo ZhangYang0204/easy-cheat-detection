@@ -1,0 +1,9 @@
+
+daoPackage: []
+listenerPackage:
+  - "pers/zhangyang/easycheatdetection/listener"
+executorPackage:
+  - "pers/zhangyang/easycheatdetection/executor"
+yamlPackage:
+  - "pers/zhangyang/easycheatdetection/yaml"
+guiButtonHandlerPackage: []

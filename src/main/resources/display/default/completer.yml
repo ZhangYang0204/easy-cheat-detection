@@ -1,0 +1,7 @@
+completer:
+
+  #当输入了/easyCheatDetection后将提示补全以下内容
+  easyCheatDetection:
+    - "help"
+    - "reloadPlugin"
+    - "correctYaml"

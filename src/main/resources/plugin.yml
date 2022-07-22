@@ -1,0 +1,7 @@
+name: EasyCheatDetection
+version: 1.0.0
+main: pers.zhangyang.easycheatdetection.EasyCheatDetection
+api-version: 1.13
+commands:
+  EasyCheatDetection:
+    aliases: ecd
