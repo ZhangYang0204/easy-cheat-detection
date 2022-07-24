@@ -6,6 +6,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.scheduler.BukkitRunnable;
 import pers.zhangyang.easycheatdetection.EasyCheatDetection;
+import pers.zhangyang.easycheatdetection.domain.Gamer;
 import pers.zhangyang.easycheatdetection.manager.GamerManager;
 import pers.zhangyang.easycheatdetection.yaml.MessageYaml;
 import pers.zhangyang.easylibrary.annotation.EventListener;
@@ -16,17 +17,17 @@ public class PlayerVerify implements Listener {
     @EventHandler
     public void on(AsyncPlayerChatEvent event) {
 
-        Player player = event.getPlayer();
+        Gamer gamer=GamerManager.INSTANCE.getGamer(event.getPlayer());
         String message = event.getMessage();
-        if (!message.equalsIgnoreCase(".verify")) {
+        if (!message.equalsIgnoreCase(gamer.getCode())) {
             return;
         }
         event.setCancelled(true);
         new BukkitRunnable() {
             @Override
             public void run() {
-                GamerManager.INSTANCE.getGamer(player).setVerify(true);
-                MessageUtil.sendMessageTo(player, MessageYaml.INSTANCE.getStringList("message.chat.verify"));
+                gamer.setVerify(true);
+                MessageUtil.sendMessageTo(gamer.getPlayer(), MessageYaml.INSTANCE.getStringList("message.chat.verify"));
 
             }
         }.runTask(EasyCheatDetection.instance);
