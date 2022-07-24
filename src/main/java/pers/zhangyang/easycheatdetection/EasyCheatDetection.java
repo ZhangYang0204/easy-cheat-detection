@@ -8,7 +8,7 @@ public class EasyCheatDetection extends EasyPlugin {
     public void onOpen() {
 
         // bStats统计信息
-        new Metrics(EasyCheatDetection.instance, 14803);
+        new Metrics(EasyCheatDetection.instance, 15901);
 
     }
 
