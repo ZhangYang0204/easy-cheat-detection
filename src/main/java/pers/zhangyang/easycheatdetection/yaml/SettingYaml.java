@@ -15,8 +15,8 @@ public class SettingYaml extends YamlBase {
     @NotNull
     public String getDisplay() {
         String display = getStringDefault("setting.display");
-        if (!display.equalsIgnoreCase("default")
-                && !display.equalsIgnoreCase("english")) {
+
+        if(pers.zhangyang.easylibrary.yaml.SettingYaml.class.getClassLoader().getResource("display/"+display)==null){
             display = backUpConfiguration.getString("setting.display");
         }
         assert display != null;

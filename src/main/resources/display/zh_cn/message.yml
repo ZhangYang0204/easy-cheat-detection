@@ -1,6 +1,6 @@
 message:
 
-  replace:
+  component:
     notifyCheatDetection: "&b&l点我完成作弊验证！！！验证未成功禁止移动！！！"
 
   chat:

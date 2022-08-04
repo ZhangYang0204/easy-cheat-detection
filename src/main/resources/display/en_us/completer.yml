@@ -1,6 +1,6 @@
 completer:
 
-  #当输入了/easyCheatDetection后将提示补全以下内容
+  #When /EasyCheatDetection is entered,you will be prompted to complete the following contents
   easyCheatDetection:
     - "help"
     - "reloadPlugin"
