@@ -11,13 +11,4 @@ public class MessageYaml extends YamlBase {
         super("display/" + SettingYaml.INSTANCE.getDisplay() + "/message.yml");
     }
 
-    @NotNull
-    public String getReplaceNotifyCheatDetection() {
-        String display = getStringDefault("message.component.notifyCheatDetection");
-        if (display.isEmpty()) {
-            display = backUpConfiguration.getString("message.component.notifyCheatDetection");
-        }
-        assert display != null;
-        return display;
-    }
 }

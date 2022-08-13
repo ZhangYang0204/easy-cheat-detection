@@ -1,6 +1,8 @@
 message:
 
   component:
+
+    #Required, otherwise the default value is used
     notifyCheatDetection: "&b&lClick me to verify!!!Before succeeding in verifying,you can not move!!!"
 
   chat:

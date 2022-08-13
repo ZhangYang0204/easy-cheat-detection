@@ -22,7 +22,7 @@ public class PlayerMove implements Listener {
         }
         event.setCancelled(true);
         BaseComponent verify = new TextComponent(ChatColor.translateAlternateColorCodes('&',
-                MessageYaml.INSTANCE.getReplaceNotifyCheatDetection()));
+                MessageYaml.INSTANCE.getNonemptyStringDefault("message.component.notifyCheatDetection")));
         verify.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, gamer.getCode()));
         gamer.getPlayer().spigot().sendMessage(verify);
     }
