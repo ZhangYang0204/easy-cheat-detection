@@ -12,7 +12,7 @@ public class Gamer {
     public Gamer(Player player) {
         this.player = player;
         verify = false;
-        for (int i = 0; i < 99; i++) {
+        for (int i = 0; i < 50; i++) {
             code=code+new Random().nextInt(10);
         }
     }

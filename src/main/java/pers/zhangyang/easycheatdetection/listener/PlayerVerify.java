@@ -2,6 +2,7 @@ package pers.zhangyang.easycheatdetection.listener;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -14,7 +15,7 @@ import pers.zhangyang.easylibrary.util.MessageUtil;
 
 @EventListener
 public class PlayerVerify implements Listener {
-    @EventHandler
+    @EventHandler(priority = EventPriority.HIGHEST)
     public void on(AsyncPlayerChatEvent event) {
 
         Gamer gamer=GamerManager.INSTANCE.getGamer(event.getPlayer());

@@ -5,6 +5,7 @@ import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
 import pers.zhangyang.easycheatdetection.domain.Gamer;
@@ -14,10 +15,13 @@ import pers.zhangyang.easylibrary.annotation.EventListener;
 
 @EventListener
 public class PlayerMove implements Listener {
-    @EventHandler
+    @EventHandler(priority = EventPriority.HIGH)
     public void on(PlayerMoveEvent event) {
         Gamer gamer = GamerManager.INSTANCE.getGamer(event.getPlayer());
         if (gamer.isVerify()) {
+            return;
+        }
+        if (event.getTo()!=null&&event.getFrom().getZ()==event.getTo().getZ()&&event.getTo().getX()==event.getFrom().getX()){
             return;
         }
         event.setCancelled(true);
